@@ -1,5 +1,15 @@
+const {
+  createUser,
+  createActivity,
+  createRoutine,
+  getRoutinesWithoutActivities,
+  getAllActivities,
+  addActivityToRoutine
+} = require('./');
+
 // require in the database adapter functions as you write them (createUser, createActivity...)
 // const { } = require('./');
+
 const client = require("./client")
 
 async function dropTables() {
@@ -13,7 +23,7 @@ async function dropTables() {
     DROP TABLE IF EXISTS users;
     `)
 
-    console.log("DOne Droping Tables")
+    console.log("Done Droping Tables")
   } catch (error) {
     throw error;
   }
@@ -55,7 +65,7 @@ async function createTables() {
     `)
     console.log("Done Creating Tables")
   } catch (error) {
-    throw error
+    throw error;
   }
 }
 
