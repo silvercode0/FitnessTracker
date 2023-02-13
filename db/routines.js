@@ -76,7 +76,7 @@ async function getAllRoutines() {
     // join them together (users to routines) // need to take the creatorId which is used to create a routine and equal it to the users.id (joining two together) //
     
     console.log("Done Getting All Routines")
-    return routines;
+    return attachActivitiesToRoutines(routines);
    } catch (error) {
 
     throw error;

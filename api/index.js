@@ -1,9 +1,23 @@
 const express = require('express');
+const cors = require('cors');
+const app = express()
 const router = express.Router();
+
+app.use(cors())
+
+app.get('/products/:id', function (req, res,) {
+  
+  res.json({msg: 'This is CORS-enabled for all origins!'});
+})
+app.listen(58, function () {
+  
+  console.log('CORS-enabled web server listening on port 58');
+})
 
 // GET /api/health
 router.get('/health', async () => {
-    console.log('server is running on port 80')
+
+  console.log('server is running on port 58');
 });
 
 router.use(async (req, res, next) => {
