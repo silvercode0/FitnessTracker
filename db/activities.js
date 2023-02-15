@@ -100,7 +100,7 @@ async function attachActivitiesToRoutines(routines) {
   try {
     console.log("Trying to Attach Activities to Routines")
     
-    const { rows: [ activities ] } = await client.query(`
+    const { rows: activities } = await client.query(`
       SELECT activities.*, routine_activities.duration, routine_activities.count, 
       routine_activities.id AS "routineActivityId", routine_activities."routineId"
       FROM activities
